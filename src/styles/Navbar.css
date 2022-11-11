@@ -1,0 +1,203 @@
+.navbar {
+  padding: 1rem 0;
+  border-bottom: 2px solid black;
+  width: 100%;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1220px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+.logo a h1 {
+  font-size: 2rem;
+  color: black;
+}
+
+.navbarAuth {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbarAuth a button {
+  background-color: transparent;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  color: black;
+}
+
+.navbarAuth a button:hover {
+  color: rgb(67, 66, 66);
+}
+
+.logoutButton {
+  background-color: transparent;
+  border: none;
+}
+
+.logoutIcon {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.logoutIcon:active {
+  scale: 0.96;
+}
+
+.profileLogo img {
+  border-radius: 100px;
+  width: 2.1rem;
+  height: 2.1rem;
+  cursor: pointer;
+}
+
+.profileLogo img:active {
+  scale: 0.96;
+}
+
+.mobileMenu {
+  display: none;
+}
+
+.mobileNavBar {
+  display: none;
+}
+
+.profilePop {
+  position: absolute;
+  right: 10.3%;
+  top: 9.8%;
+  background-color: white;
+  width: 300px;
+  height: 230px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 2rem 1rem;
+  z-index: 2;
+}
+
+.popCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.popName {
+  text-align: center;
+}
+
+.popName p {
+  margin-bottom: 0.3rem;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.popName span {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.popPro button {
+  background-color: whitesmoke;
+  color: black;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  text-transform: capitalize;
+  border: 2px solid black;
+  font-weight: 400;
+  padding: 8px 3rem;
+}
+
+.popPro button:hover {
+  background-color: white;
+}
+
+.popLogout button {
+  background-color: transparent;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .navbarAuth {
+    display: none;
+  }
+
+  .navbar {
+    border-bottom: 1px solid black;
+    width: 100%;
+  }
+
+  .mobileMenu {
+    display: flex;
+  }
+
+  .menuIcon {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .mobileNavBar {
+    display: block;
+    background-color: white;
+    padding: 2rem 2rem;
+    width: 70%;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+  }
+
+  .mobileProfile h1 {
+    font-weight: 100;
+    font-size: 1.2rem;
+  }
+
+  .mobileLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+    font-weight: bold;
+  }
+
+  .mobileAction {
+    text-align: center;
+    width: 30%;
+    margin: auto;
+  }
+
+  .mobileLogout {
+    width: 100%;
+  }
+
+  .mobileLogout {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .mobileLogoutIcon {
+    color: black;
+    font-size: 1.2rem;
+  }
+
+  .cancel {
+    position: absolute;
+    top: 3.3%;
+    right: 5%;
+  }
+
+  .cancelIcon {
+    font-size: 1.6rem;
+  }
+}

@@ -1,0 +1,143 @@
+.profileBar {
+  width: 100%;
+}
+
+.profileWrap {
+  max-width: 1220px;
+  margin: auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  background-color: white;
+}
+
+.mainProfile {
+  padding: 0 6rem;
+  position: relative;
+}
+
+.profileHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 3rem;
+}
+
+.profileHead h1 {
+  font-size: 2.4rem;
+  text-transform: capitalize;
+}
+
+.threeDot {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: gray;
+}
+
+.threeDot:hover {
+  color: black;
+}
+
+.sideProfile {
+  padding: 0 1rem;
+  border-left: 1px solid rgb(173, 173, 173);
+}
+
+.copyPop {
+  position: absolute;
+  right: 4%;
+  top: 11%;
+  background-color: whitesmoke;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  height: 60px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copyPop p {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  cursor: pointer;
+  color: gray;
+}
+
+.copyPop p:hover {
+  color: black;
+}
+
+.linkCopy {
+  position: absolute;
+  right: 6%;
+  top: 11%;
+  background-color: whitesmoke;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.05);
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+.profileActions {
+  padding-top: 3rem;
+}
+
+.profileActionLink {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 0.2rem;
+}
+
+.spanNotActive {
+  color: gray;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.spanActive {
+  font-weight: 600;
+  color: black;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.userNotImage {
+  border-radius: 100px;
+  width: 150px;
+  height: 150px;
+}
+
+.userAboutMsg {
+  color: black;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.emptyPost {
+  color: red;
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.postDelete {
+  cursor: pointer;
+  color: red;
+  font-size: 1.1rem;
+}
+
+.postTags {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

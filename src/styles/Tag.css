@@ -1,0 +1,137 @@
+.tagBar {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1rem;
+  padding-top: 4rem;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+}
+
+.tagHead {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tagHead h1 {
+  font-size: 2.5rem;
+  text-transform: capitalize;
+}
+
+.tagIconBar {
+  background-color: rgb(216, 214, 214);
+  padding: 0.5rem;
+  border-radius: 100px;
+  height: 30px;
+  width: 30px;
+}
+
+.tagIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tagsLine {
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  margin-top: 0.3rem;
+}
+
+.tagLatest {
+  margin-top: 3rem;
+}
+
+.tagLatest span {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.tagSideBar {
+  padding: 0 1rem;
+  padding-top: 8rem;
+}
+
+.tagSideBarCard {
+  background-color: whitesmoke;
+  padding: 1rem 0;
+}
+
+.tagCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.story h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.story p {
+  text-transform: capitalize;
+  color: rgb(89, 89, 89);
+}
+
+.tagUser {
+  display: flex;
+  align-items: center;
+  padding: 0 2.7rem;
+  margin-top: 2rem;
+}
+
+.tagUser img {
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 100px;
+  margin-left: -0.7rem;
+  border: 1px solid whitesmoke;
+}
+
+.tagSideUserCard {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.tagSideUserCard h1 {
+  font-size: 1.3rem;
+  background-color: black;
+  color: white;
+  padding: 6px 10px;
+  margin-bottom: 1rem;
+}
+
+.tagUserWrap {
+  background-color: whitesmoke;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.uniqueUserList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.uniqueUserList img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100px;
+}
+
+.wrapTag p {
+  text-transform: capitalize;
+  font-size: 0.85rem;
+  color: gray;
+  margin-top: 0.1rem;
+}
+
+.wrapTag h5 {
+  text-transform: capitalize;
+  font-size: 1rem;
+}

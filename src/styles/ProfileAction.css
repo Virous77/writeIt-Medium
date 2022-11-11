@@ -1,0 +1,130 @@
+.profileAboutBar {
+  display: flex;
+  align-items: center;
+  justify-content: baseline;
+}
+
+.profileAboutCard {
+  text-align: center;
+  width: 70%;
+  margin: auto;
+  padding-top: 2rem;
+}
+
+.profileAboutCard h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+
+.profileAboutCard p {
+  font-size: 0.9rem;
+  line-height: 1.3;
+  padding-bottom: 1.5rem;
+}
+
+.profileAboutCard button {
+  background-color: rgb(4, 184, 4);
+  border-radius: 20px;
+  text-transform: capitalize;
+}
+
+.profileAboutSection {
+  padding: 2rem 1rem;
+  width: 100%;
+}
+
+.aboutSectionAction {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+
+.wrapAbout {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.aboutCancel {
+  background-color: whitesmoke;
+  border-radius: 20px;
+  color: black;
+  font-size: 0.9rem;
+}
+
+.aboutSave {
+  background-color: black;
+  color: white;
+  font-size: 0.9rem;
+  border-radius: 20px;
+}
+
+.imgAsset {
+  width: 15rem;
+  margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.imgAsset img {
+  height: 150px;
+  width: 150px;
+  border-radius: 100px;
+}
+
+.deleteImage {
+  position: absolute;
+  bottom: 2%;
+  right: 25%;
+  cursor: pointer;
+}
+
+.aboutImageConta {
+  position: relative;
+}
+
+.aboutImageConta input {
+  opacity: 1;
+  width: 2rem;
+  opacity: 0;
+  padding: 4px 0;
+  position: absolute;
+  bottom: 14%;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.cameraIcon {
+  position: absolute;
+  left: 0;
+  bottom: 14%;
+  font-size: 2.2rem;
+  z-index: 0;
+  cursor: pointer;
+}
+
+.aboutWrite {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 300px 1fr;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.trash {
+  font-size: 1.2rem;
+  color: red;
+}
+
+.nameInput {
+  padding: 0 10px;
+  padding-top: 30px;
+  padding-bottom: 5px;
+  background-color: white;
+  border-bottom: 1px solid gray;
+}

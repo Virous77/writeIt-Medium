@@ -1,0 +1,11 @@
+export { default as LoginPage } from "./LoginPage";
+export { default as SignUpPage } from "./SignUpPage";
+export { default as HomePage } from "./HomePage";
+export { default as ErrorPage } from "./ErrorPage";
+export { default as ForgetPassPage } from "./ForgetPassPage";
+export { default as WritePage } from "./WritePage";
+export { default as StoryPage } from "./StoryPage";
+export { default as ProfilePage } from "./ProfilePage";
+export { default as PostDetails } from "./PostDetails";
+export { default as Tags } from "./Tags";
+export { default as BookmarkPost } from "./BookmarkPost";

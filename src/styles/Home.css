@@ -1,0 +1,202 @@
+.homeBar {
+  padding: 1rem 4rem;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  position: relative;
+}
+
+.latest {
+  border-left: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 4rem;
+  position: fixed;
+  height: 100vh;
+  right: 0;
+  width: 400px;
+  top: 1%;
+  padding-right: 4rem;
+  z-index: 1;
+  overflow: scroll;
+}
+
+.latest h1 {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  text-transform: capitalize;
+  background-color: black;
+  color: white;
+  padding: 6px 0;
+}
+
+.homeContentBar {
+  width: 80%;
+  margin: auto;
+}
+
+.tagsBar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  overflow-x: scroll;
+  padding: 0 1rem;
+}
+
+.tagsBar::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+.tagLine {
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  margin-bottom: 3rem;
+}
+
+.tagsBar span {
+  text-transform: capitalize;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.homeContentList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.author img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100px;
+}
+
+.author p {
+  text-transform: capitalize;
+}
+
+.author span {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+.authorPostBar {
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 130px;
+  gap: 2rem;
+}
+
+.authorPostBar img {
+  width: 130px;
+  height: 100px;
+}
+
+.authorPost h1 {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: black;
+}
+
+.authorPostBar p {
+  color: black;
+}
+
+.postTag {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+}
+
+.contentList {
+  background-color: whitesmoke;
+  padding: 1rem;
+}
+
+.postTagItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.postTagItem p {
+  text-transform: capitalize;
+  background-color: gray;
+  padding: 3px 8px;
+  border-radius: 10px;
+  color: white;
+  font-size: 0.7rem;
+}
+
+.bookmarkIcon {
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.bookmarkIcon:active {
+  scale: 0.95;
+}
+
+.latestList {
+  background-color: whitesmoke;
+  padding: 0.5rem 1rem;
+}
+
+.latestList p {
+  color: black;
+}
+
+.latestList h4 {
+  color: black;
+}
+
+.recomendedTopics {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+}
+
+.trend {
+  text-align: center;
+  font-size: 1.3rem;
+  text-transform: capitalize;
+  color: white;
+  padding: 6px 0;
+  background-color: black;
+  margin-top: 3rem;
+  margin-bottom: -1rem;
+}
+
+.recomendedTopics p {
+  color: white;
+  background-color: gray;
+  padding: 3px 9px;
+  text-transform: capitalize;
+  font-size: 0.8rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.cool {
+  color: aqua;
+}
+
+.fact {
+  color: red;
+}
