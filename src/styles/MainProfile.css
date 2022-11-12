@@ -83,3 +83,9 @@
   bottom: 3%;
   left: 40%;
 }
+
+@media (max-width: 768px) {
+  .profileCard {
+    padding-top: 3rem;
+  }
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useUserAuthContext } from "../store/authContext";
 import "../styles/Profile.css";
 import { BsThreeDots } from "react-icons/bs";
@@ -12,11 +12,11 @@ import MainProfile from "../components/MainProfile";
 const ProfilePage = () => {
   const { user } = useUserAuthContext();
   const { userData, loading, getProductById } = useUserFetch("users", user.uid);
-
   const { name, uid } = userData;
-
   const { showAction, setShowAction, spanActive, setSpanActive } =
     useActionContext();
+
+  const [showProfile, setShowProfile] = useState(false);
 
   if (loading) return <Loader />;
 
@@ -64,17 +64,28 @@ const ProfilePage = () => {
               >
                 Home
               </span>
+              {!showProfile && (
+                <span
+                  className={spanActive ? "spanNotActive" : "spanActive"}
+                  onClick={() => {
+                    setSpanActive(false);
+                    {
+                      userData &&
+                        setShowAction({ ...showAction, showAboutEdit: true });
+                    }
+                  }}
+                >
+                  About
+                </span>
+              )}
+
               <span
-                className={spanActive ? "spanNotActive" : "spanActive"}
-                onClick={() => {
-                  setSpanActive(false);
-                  {
-                    userData &&
-                      setShowAction({ ...showAction, showAboutEdit: true });
-                  }
-                }}
+                className={`profileIt ${
+                  showProfile ? "profileItActive" : "profileItNotActive"
+                }`}
+                onClick={() => setShowProfile(!showProfile)}
               >
-                About
+                Profile
               </span>
             </div>
             <hr />
@@ -86,8 +97,11 @@ const ProfilePage = () => {
             <ProfileAbout uid={uid} name={name} />
           )}
         </div>
-
-        <div className="sideProfile">
+        <div
+          className={`sideProfile ${
+            showProfile ? "showprofile " : "showprofileNot "
+          }`}
+        >
           <MainProfile
             userData={userData}
             loading={loading}

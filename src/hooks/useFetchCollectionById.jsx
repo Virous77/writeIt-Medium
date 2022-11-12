@@ -40,6 +40,7 @@ const useFetchCollectionById = (userId, collections) => {
   return {
     data,
     loading,
+    getCollection,
   };
 };
 

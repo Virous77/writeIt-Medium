@@ -11,6 +11,7 @@ export const ActionContextProvider = ({ children }) => {
   });
 
   const [spanActive, setSpanActive] = useState(true);
+  const [showLatest, setShowLatest] = useState(false);
 
   const handlePropfilePop = () => {
     setShowAction({ ...showAction, profilePop: !showAction.profilePop });
@@ -24,6 +25,8 @@ export const ActionContextProvider = ({ children }) => {
         handlePropfilePop,
         spanActive,
         setSpanActive,
+        showLatest,
+        setShowLatest,
       }}
     >
       {children}

@@ -9,3 +9,4 @@ export { default as ProfilePage } from "./ProfilePage";
 export { default as PostDetails } from "./PostDetails";
 export { default as Tags } from "./Tags";
 export { default as BookmarkPost } from "./BookmarkPost";
+export { default as UserProfie } from "./UserProfie";

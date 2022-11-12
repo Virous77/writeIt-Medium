@@ -15,7 +15,6 @@ const MainProfile = ({ loading, userData, getProductById }) => {
     bio: "",
   });
   const [edit, setEdit] = useState(false);
-  const [loadings, setLoadings] = useState(false);
   const { imageAsset, isLoading, uploadImage, deleteImage } = useUploadImge();
 
   const handleChange = (e) => {
@@ -24,8 +23,6 @@ const MainProfile = ({ loading, userData, getProductById }) => {
   };
 
   const profileSubmit = async () => {
-    setLoadings(true);
-
     const tempdata = {
       name: profile.name || userData.name,
       bio: profile.bio || userData.bio,
@@ -41,9 +38,7 @@ const MainProfile = ({ loading, userData, getProductById }) => {
       toast.success("Profile Updated");
       getProductById();
       setEdit(false);
-      setLoadings(false);
     } catch (error) {
-      setLoadings(false);
       toast.error(error.message);
     }
   };

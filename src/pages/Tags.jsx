@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Tag.css";
 import { useParams, Link } from "react-router-dom";
 import { AiFillTag } from "react-icons/ai";
@@ -18,6 +18,10 @@ const Tags = () => {
   const uniqueImageTemp = userPic?.map((image) => image.photoURL);
   const uniqueImage = [...new Set(uniqueImageTemp)];
 
+  const [showMore, setShowMore] = useState(false);
+
+  console.log(latestUser);
+
   if (loading) return <Loader />;
 
   return (
@@ -31,7 +35,14 @@ const Tags = () => {
         </div>
 
         <div className="tagLatest">
-          <span>Latest</span>
+          <span className={!showMore ? "tagBold" : "tagPlane"}>Latest</span>
+
+          <span
+            className={`tagIt ${showMore ? "tagBold" : "tagPlane"}`}
+            onClick={() => setShowMore(!showMore)}
+          >
+            More Data
+          </span>
         </div>
         <div className="tagsLine"></div>
 
@@ -42,11 +53,14 @@ const Tags = () => {
                 {data?.map((item) => (
                   <div className="contentList" key={item.id}>
                     <div className="author">
-                      <img
-                        src={item.photoURL || userImage}
-                        alt={item.name}
-                        referrerpolicy="no-referrer"
-                      />
+                      <Link to={`/user-profile/${item.uid}`}>
+                        <img
+                          src={item.photoURL || userImage}
+                          alt={item.name}
+                          referrerpolicy="no-referrer"
+                        />
+                      </Link>
+
                       <p>{item.name || "John Max"}</p>
                       <span>
                         {new Date(item.createdAt.toDate()).toDateString()}
@@ -83,7 +97,10 @@ const Tags = () => {
           )}
         </div>
       </div>
-      <div className="tagSideBar">
+
+      <div
+        className={`tagSideBar ${showMore ? "tagActiveIt" : "tagNotActiveIt"}`}
+      >
         <div className="tagSideBarCard">
           <div className="tagCard">
             <div className="story">
@@ -114,7 +131,10 @@ const Tags = () => {
           <div className="uniqueUserList">
             {latestUser.map((uUser) => (
               <div className="tagUserWrap">
-                <img src={uUser.photoURL || userImage} alt="" />
+                <Link to={`/user-profile/${uUser.uid}`}>
+                  <img src={uUser.photoURL || userImage} alt="" />
+                </Link>
+
                 <div className="wrapTag">
                   <h5>{uUser.name}</h5>
                   <p>{uUser.bio}</p>

@@ -64,6 +64,7 @@ const WritePage = () => {
       tags: tags,
       postImage: imageAsset,
       createdAt: serverTimestamp(),
+      likes: Number(0),
     };
     try {
       await addDoc(collection(db, "post"), tempdata);

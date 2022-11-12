@@ -1,0 +1,103 @@
+.storyBar {
+  padding-top: 5rem;
+}
+
+.storyHead {
+  text-align: center;
+  padding-bottom: 3rem;
+  padding-top: 2rem;
+}
+.storyHead h1 {
+  font-size: 4rem;
+  width: 90%;
+  margin: auto;
+  line-height: 1.1;
+}
+
+.writeAbout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  background-color: black;
+  color: white;
+}
+
+.writeAbout p {
+  font-size: 1.3rem;
+}
+
+.writeAbout img {
+  display: block;
+  height: 400px;
+}
+
+.writeStory {
+  background-color: green;
+  color: white;
+  text-align: center;
+}
+
+.writeStory h1 {
+  font-size: 3rem;
+  padding: 2rem 0;
+  width: 90%;
+  line-height: 1.1;
+  margin: auto;
+}
+
+.writeStory p {
+  width: 70%;
+  margin: auto;
+  padding-bottom: 2rem;
+}
+
+.writeStory button {
+  background-color: white;
+  padding: 8px 3rem;
+  border-radius: 20px;
+  color: black;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-bottom: 3rem;
+}
+
+.WriteUs {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.WriteUs a h1 {
+  font-size: 3rem;
+  text-transform: capitalize;
+  color: black;
+}
+
+.WriteUs a h1 span {
+  color: red;
+  font-size: 3.5rem;
+}
+
+@media (max-width: 992px) {
+  .writeAbout {
+    grid-template-columns: 1fr;
+  }
+
+  .writeAbout img {
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .writeStory h1 {
+    font-size: 2.5rem;
+  }
+
+  .storyHead h1 {
+    font-size: 3rem;
+  }
+
+  .writeAbout {
+    padding: 2rem 1rem;
+  }
+}

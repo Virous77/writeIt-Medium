@@ -1,5 +1,6 @@
 .profileBar {
   width: 100%;
+  padding-top: 4.5rem;
 }
 
 .profileWrap {
@@ -46,7 +47,7 @@
 .copyPop {
   position: absolute;
   right: 4%;
-  top: 11%;
+  top: 4%;
   background-color: whitesmoke;
   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
   padding: 1rem;
@@ -73,7 +74,7 @@
 .linkCopy {
   position: absolute;
   right: 6%;
-  top: 11%;
+  top: 4%;
   background-color: whitesmoke;
   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.05);
   padding: 0.5rem 1rem;
@@ -140,4 +141,80 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.profileIt {
+  display: none;
+}
+
+@media (max-width: 1220px) {
+  .profileWrap {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 1150px) {
+  .mainProfile {
+    padding: 0 3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .mainProfile {
+    padding: 0 1rem;
+  }
+
+  .profileWrap {
+    grid-template-columns: 1fr 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profileWrap {
+    grid-template-columns: 1fr;
+  }
+
+  .sideProfile {
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: white;
+    z-index: 10;
+    height: 100vh;
+  }
+
+  .showprofile {
+    display: flex;
+  }
+
+  .showprofileNot {
+    display: none;
+  }
+
+  .profileIt {
+    display: block;
+  }
+
+  .profileItActive {
+    font-weight: 600;
+    color: black;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .profileItNotActive {
+    color: gray;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 620px) {
+  .mainProfile {
+    padding: 0;
+  }
+
+  .profileActionLink {
+    gap: 1rem;
+  }
 }

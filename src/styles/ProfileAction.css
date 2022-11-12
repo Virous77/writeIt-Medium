@@ -128,3 +128,15 @@
   background-color: white;
   border-bottom: 1px solid gray;
 }
+
+@media (max-width: 768px) {
+  .aboutWrite {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 2rem;
+  }
+
+  .aboutSectionAction {
+    margin-bottom: 4rem;
+  }
+}

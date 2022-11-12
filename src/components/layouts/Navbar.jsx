@@ -14,7 +14,8 @@ const Navbar = () => {
   const { userData, loading } = useFetchUser("users", uid);
 
   const { name, photoURL, email } = userData;
-  const { showAction, setShowAction, handlePropfilePop } = useActionContext();
+  const { showAction, setShowAction, handlePropfilePop, setShowLatest } =
+    useActionContext();
   const { profilePop } = showAction;
 
   const cancel = () => {
@@ -25,16 +26,26 @@ const Navbar = () => {
     setShowAction({ ...showAction, profilePop: false });
   };
 
+  const pathname = window.location.pathname;
+
   return (
     <nav className="navbar">
       <div className="nav">
         <div className="logo">
           <Link to="/">
-            <h1>React Blog</h1>
+            <h1>
+              Write<span>It</span>
+            </h1>
           </Link>
         </div>
 
         <div className="navbarAuth">
+          {pathname === "/" && (
+            <button className="showLat" onClick={() => setShowLatest(true)}>
+              Latest
+            </button>
+          )}
+
           {isLoggedIn ? (
             <Link to="/bookmark">
               <button>Bookmark</button>
@@ -111,7 +122,9 @@ const Navbar = () => {
         <div className="mobileNavBar">
           <div className="mobileProfile">
             <Link to="/">
-              <h1 onClick={cancel}>React Blog</h1>
+              <h1 onClick={cancel}>
+                Write<span>It</span>
+              </h1>
             </Link>
 
             <Link to="/">
@@ -119,20 +132,43 @@ const Navbar = () => {
             </Link>
 
             <div className="mobileLinks">
-              {isLoggedIn && (
+              <Link to="/write">
+                <button onClick={cancel}>Write</button>
+              </Link>
+
+              {!isLoggedIn && (
                 <Link to="/our-story">
                   <button onClick={cancel}>Our Story</button>
                 </Link>
               )}
 
-              <Link to="/write">
-                <button onClick={cancel}>Write</button>
-              </Link>
+              {isLoggedIn && (
+                <Link to="/bookmark">
+                  <button onClick={cancel}>Bookmark</button>
+                </Link>
+              )}
 
               <div className="mobileAction">
-                <Link to={`/profile/${name}`}>
-                  <buttonL onClick={cancel}>Profile</buttonL>
-                </Link>
+                {isLoggedIn && (
+                  <Link to={`/profile/${name}`}>
+                    <button onClick={cancel}>Profile</button>
+                  </Link>
+                )}
+
+                {isLoggedIn ? (
+                  <button
+                    onClick={() => {
+                      cancel();
+                      logout();
+                    }}
+                  >
+                    Logout
+                  </button>
+                ) : (
+                  <Link to="/login">
+                    <button onClick={cancel}>Sign In</button>
+                  </Link>
+                )}
               </div>
 
               <div className="cancel">

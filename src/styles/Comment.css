@@ -1,0 +1,142 @@
+.commentBar {
+  background-color: white;
+  padding: 1rem 1rem;
+  position: fixed;
+  right: 0;
+  width: 400px;
+  height: 100vh;
+  top: 0;
+  z-index: 110;
+}
+
+.commentHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  padding-bottom: 2rem;
+}
+
+.closeIcon {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.commentUserCard {
+  width: 90%;
+  margin: auto;
+  box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.activeCommentUser {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.activeCommentUser img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100px;
+}
+
+.activeCommentUser p {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.commentInput {
+  margin-top: 1rem;
+}
+
+.commentInput input {
+  background-color: white;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.thoughts {
+  box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  width: 90%;
+  margin: auto;
+  border-radius: 5px;
+}
+
+.cancelComment {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.cancelComment button {
+  padding: 8px 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.commentCancel {
+  background-color: black;
+  color: white;
+}
+
+.commentSave {
+  background-color: #2c2;
+  color: white;
+}
+
+.commentPostList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+  overflow: scroll;
+  height: 480px;
+  padding: 1rem 0;
+}
+
+.commentPostList::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+.commentList {
+  display: flex;
+  gap: 0.5rem;
+  background-color: whitesmoke;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.commentList img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100px;
+}
+
+.commUser {
+  display: flex;
+  gap: 0.3rem;
+  flex-direction: column;
+}
+
+.commentList p {
+  text-transform: capitalize;
+}
+
+.commentList span {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+@media (max-width: 520px) {
+  .commentBar {
+    width: 100%;
+    height: 100vh;
+  }
+}

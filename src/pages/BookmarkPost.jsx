@@ -37,7 +37,7 @@ const BookmarkPost = () => {
                   </span>
                 </div>
 
-                <Link to={`/post-details/${item.name}/${item.id}`}>
+                <Link to={`/post-details/${item.name}/${item.bid}`}>
                   <div className="authorPostBar">
                     <div className="authorPost">
                       <h1>{item.title}</h1>
@@ -48,7 +48,7 @@ const BookmarkPost = () => {
                   </div>
                 </Link>
 
-                <div className="postTag">
+                <div className="postTagss">
                   <div className="postTagItem">
                     <p>{item.tags}</p>
                   </div>

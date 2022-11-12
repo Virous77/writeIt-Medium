@@ -1,7 +1,12 @@
 .navbar {
   padding: 1rem 0;
   border-bottom: 2px solid black;
+  position: fixed;
+  left: 0;
+  top: 0;
   width: 100%;
+  z-index: 100;
+  background-color: #f2f4f8;
 }
 
 .nav {
@@ -18,6 +23,10 @@
   color: black;
 }
 
+.logo a h1 span {
+  color: red;
+}
+
 .navbarAuth {
   display: flex;
   align-items: center;
@@ -30,6 +39,7 @@
   border: none;
   cursor: pointer;
   color: black;
+  padding: 8px;
 }
 
 .navbarAuth a button:hover {
@@ -71,8 +81,8 @@
 
 .profilePop {
   position: absolute;
-  right: 10.3%;
-  top: 9.8%;
+  right: 5%;
+  top: 100%;
   background-color: white;
   width: 300px;
   height: 230px;
@@ -80,7 +90,7 @@
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   padding: 2rem 1rem;
-  z-index: 2;
+  z-index: 10000;
 }
 
 .popCard {
@@ -126,6 +136,30 @@
   color: black;
 }
 
+.showLat {
+  display: none;
+}
+
+@media (max-width: 1220px) {
+  .nav {
+    padding: 0 2rem;
+    width: 100%;
+  }
+
+  .profilePop {
+    right: 2%;
+  }
+}
+
+@media (max-width: 1050px) {
+  .showLat {
+    display: flex;
+    background-color: transparent;
+    color: black;
+    padding: 8px;
+  }
+}
+
 @media (max-width: 768px) {
   .navbarAuth {
     display: none;
@@ -148,7 +182,7 @@
   .mobileNavBar {
     display: block;
     background-color: white;
-    padding: 2rem 2rem;
+    padding: 1rem 2rem;
     width: 70%;
     margin: auto;
     position: absolute;
@@ -157,27 +191,51 @@
     height: 100vh;
   }
 
-  .mobileProfile h1 {
-    font-weight: 100;
-    font-size: 1.2rem;
+  .mobileNavBar button {
+    text-transform: uppercase;
+    color: black;
+    background-color: transparent;
+    padding-left: 0;
+    font-weight: bold;
+  }
+
+  .mobileNavBar a h1 {
+    font-weight: bold;
+    color: black;
+    padding-bottom: 2rem;
+    font-size: 2rem;
+  }
+
+  .mobileNavBar a h1 span {
+    color: red;
   }
 
   .mobileLinks {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    margin-top: 2rem;
+    gap: 1rem;
+    margin-top: 1rem;
     font-weight: bold;
   }
 
   .mobileAction {
     text-align: center;
-    width: 30%;
     margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    text-transform: uppercase;
   }
 
   .mobileLogout {
     width: 100%;
+  }
+
+  .mobileAction a button {
+    padding-left: 0;
+    font-weight: bold;
+    white-space: nowrap;
+    padding: 8px 0;
   }
 
   .mobileLogout {
@@ -199,5 +257,11 @@
 
   .cancelIcon {
     font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .nav {
+    padding: 0 1rem;
   }
 }

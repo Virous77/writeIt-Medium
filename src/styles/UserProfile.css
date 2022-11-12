@@ -1,0 +1,87 @@
+.userProfileBar {
+  max-width: 1200px;
+  margin: auto;
+  background-color: white;
+  padding-top: 7rem;
+}
+
+.userProfileHead {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.userProfileCard {
+  padding: 0 1rem;
+}
+
+.userProfileHead img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 100px;
+}
+
+.userProfileHead h1 {
+  font-size: 3rem;
+  text-transform: capitalize;
+}
+
+.userProfileHead p {
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
+.userMyPost {
+  text-align: center;
+  background-color: black;
+  padding: 6px 16px;
+  width: fit-content;
+  margin: auto;
+  font-size: 1.5rem;
+  margin-top: 3rem;
+  color: white;
+  text-transform: capitalize;
+}
+
+.noPostUsr {
+  color: red;
+  text-align: center;
+  padding: 3rem 0;
+  text-transform: capitalize;
+}
+
+.userProfileA {
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 992px) {
+  .userProfileHead {
+    width: 100%;
+    justify-content: center;
+    gap: 5rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .userProfileHead {
+    width: 100%;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  .userProfileHead img {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .userProfileHead h1 {
+    font-size: 2rem;
+  }
+
+  .userMyPost {
+    font-size: 1rem;
+  }
+}

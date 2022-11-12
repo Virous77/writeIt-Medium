@@ -11,6 +11,8 @@ import useFetchCollectionById from "../hooks/useFetchCollectionById";
 import { useUserAuthContext } from "../store/authContext";
 import { Link, useNavigate } from "react-router-dom";
 import useFetchUserByLimit from "../hooks/useFetchUserByLimit";
+import { useActionContext } from "../store/actionContext";
+import { AiOutlineClose } from "react-icons/ai";
 
 const HomePage = () => {
   const { data, loading } = useFetchCollection("post");
@@ -18,6 +20,7 @@ const HomePage = () => {
   const { user } = useUserAuthContext();
   const { data: bookdata } = useFetchCollectionById(user.uid, "bookmark");
   const { data: latestUser } = useFetchUserByLimit("post");
+  const { showLatest, setShowLatest } = useActionContext();
 
   const navigate = useNavigate();
 
@@ -42,9 +45,9 @@ const HomePage = () => {
         return;
       }
 
-      const uniqueBookMark = bookdata.find((book) => book.bid == e.id);
+      const uniqueBookMark = bookdata.find((book) => book.bid === e.id);
       if (uniqueBookMark) {
-        const dele = userBook.filter((de) => de.bid == e.id);
+        const dele = userBook.filter((de) => de.bid === e.id);
         await deleteDoc(doc(db, "bookmark", dele[0].id));
         return;
       }
@@ -58,23 +61,33 @@ const HomePage = () => {
   return (
     <section className="homeBar">
       <div className="homeContentBar">
-        <div className="tagsBar">
-          <span>For You</span>
-          {uniqueTags?.map((unique, idx) => (
-            <div key={idx}>
-              <span>{unique}</span>
-            </div>
-          ))}
+        <div className="tagWrapIt">
+          <div className="tagsBarst">
+            <span>For You</span>
+            {uniqueTags?.map((unique, idx) => (
+              <span key={idx}>
+                <Link to={`/tags/${unique}`}>{unique}</Link>
+              </span>
+            ))}
+          </div>
         </div>
+
         <div className="tagLine"></div>
+
+        <button className="showHomeLat" onClick={() => setShowLatest(true)}>
+          Latest
+        </button>
 
         <div className="homeContentList">
           {data?.map((item) => (
             <div className="contentList" key={item.id}>
               <div className="author">
-                <img src={item.photoURL || userImage} alt={item.name} />
+                <Link to={`/user-profile/${item.uid}`}>
+                  <img src={item.photoURL || userImage} alt={item.name} />
+                </Link>
+
                 <p>{item.name || "John Max"}</p>
-                <span>{new Date(item.createdAt.toDate()).toDateString()}</span>
+                <span>{new Date(item.createdAt?.toDate()).toDateString()}</span>
               </div>
 
               <Link to={`/post-details/${item.name}/${item.id}`}>
@@ -94,7 +107,7 @@ const HomePage = () => {
                     <p>{item.tags}</p>
                   </Link>
 
-                  {bookdata?.find((book) => book.bid == item.id) ? (
+                  {bookdata?.find((book) => book.bid === item.id) ? (
                     <BsBookmarkCheckFill
                       className={`bookmarkIcon $`}
                       onClick={() => bookMarkIt(item)}
@@ -113,12 +126,23 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="latest">
+      <div className={`latest ${showLatest ? "showLatest" : "showNotLatest"}`}>
+        <div>
+          <AiOutlineClose
+            className="homeCloseIcon"
+            onClick={() => setShowLatest(false)}
+          />
+        </div>
+
         <h1>Latest</h1>
+
         {latestUser?.map((item) => (
           <div className="latestList" key={item.id}>
             <div className="author">
-              <img src={item.photoURL || userImage} alt={item.name} />
+              <Link to={`/user-profile/${item.uid}`}>
+                <img src={item.photoURL || userImage} alt={item.name} />
+              </Link>
+
               <p>{item.name || "John Max"}</p>
             </div>
             <Link to={`/post-details/${item.name}/${item.id}`}>

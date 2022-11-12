@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: 1fr 300px;
   position: relative;
+  padding-top: 6rem;
 }
 
 .latest {
@@ -13,13 +14,19 @@
   gap: 0.5rem;
   margin-top: 4rem;
   position: fixed;
-  height: 100vh;
+  height: 90vh;
   right: 0;
   width: 400px;
   top: 1%;
   padding-right: 4rem;
   z-index: 1;
   overflow: scroll;
+  padding-bottom: 2rem;
+}
+
+.latest::-webkit-scrollbar {
+  width: 0;
+  display: none;
 }
 
 .latest h1 {
@@ -36,19 +43,27 @@
 .homeContentBar {
   width: 80%;
   margin: auto;
+  overflow: scroll;
 }
 
-.tagsBar {
+.tagsBarst {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 0.3rem;
-  overflow-x: scroll;
   padding: 0 1rem;
+  width: 100%;
+  margin: auto;
+  margin-top: 1rem;
+  overflow: scroll;
+  margin-bottom: 0.3rem;
 }
 
-.tagsBar::-webkit-scrollbar {
+.tagsBarst::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+.homeContentBar::-webkit-scrollbar {
   width: 0;
   display: none;
 }
@@ -60,10 +75,12 @@
   margin-bottom: 3rem;
 }
 
-.tagsBar span {
+.tagsBarst span {
   text-transform: capitalize;
   font-weight: 600;
   cursor: pointer;
+  white-space: nowrap;
+  display: block;
 }
 
 .homeContentList {
@@ -199,4 +216,117 @@
 
 .fact {
   color: red;
+}
+
+.homeCloseIcon {
+  display: none;
+}
+
+.showHomeLat {
+  display: none;
+}
+
+.tagsBarst span a {
+  color: black;
+}
+
+@media (max-width: 1220px) {
+  .homeContentBar {
+    width: 100%;
+  }
+
+  .homeBar {
+    grid-template-columns: 1fr 300px;
+    padding: 1rem 2rem;
+    padding-top: 6rem;
+  }
+
+  .latest {
+    padding-right: 2rem;
+    width: 300px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .homeBar {
+    grid-template-columns: 1fr;
+  }
+
+  .showLatest {
+    display: flex;
+    background-color: white;
+    z-index: 10;
+  }
+
+  .showNotLatest {
+    display: none;
+  }
+
+  .homeCloseIcon {
+    display: block;
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-left: 0.3rem;
+  }
+
+  .latest h1 {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .showHomeLat {
+    display: block;
+    background-color: black;
+    color: white;
+    margin-bottom: 2rem;
+  }
+
+  .latest {
+    width: 400px;
+  }
+
+  .authorPost h1 {
+    font-size: 1.2rem;
+  }
+
+  .authorPostBar p {
+    font-size: 0.8rem;
+  }
+
+  .postTag {
+    grid-template-columns: 1fr;
+  }
+  .tagsBarst {
+    /* display: none; */
+    width: 97%;
+    margin: auto;
+    padding: 0 1rem;
+    padding-bottom: 0.3rem;
+  }
+
+  .tagLine {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .homeBar {
+    padding: 1rem 0;
+    padding-top: 6rem;
+  }
+
+  .showHomeLat {
+    margin-left: 1rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .latest {
+    width: 100%;
+    padding-right: 0;
+    padding: 0 1rem;
+    scroll-behavior: smooth;
+    padding-bottom: 3rem;
+  }
 }

@@ -30,6 +30,7 @@ const useFetchCollection = (collections) => {
   return {
     data,
     loading,
+    getCollection,
   };
 };
 
